@@ -1,0 +1,14 @@
+﻿# 运行时与本地数据，不进仓库
+runtime/
+.dotnet/
+launcher/
+MYAssistant.exe
+MYAssistant.exe.WebView2/
+*.zip
+
+# 本地数据 / 密钥 / 日志
+app/data/*
+!app/data/.gitkeep
+app/config/secrets.json
+logs/*
+!logs/.gitkeep

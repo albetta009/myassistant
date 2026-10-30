@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MY Assistant · 控制台</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="bg-layer"></div>
+  <div id="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="dot">♥</div>
+        <div>
+          <div class="name">MY Assistant</div>
+          <div class="ver" id="brand-ver">v0.1.0</div>
+        </div>
+      </div>
+      <nav id="nav">
+        <div class="nav-item active" data-page="dashboard"><span class="ico">◎</span>总览</div>
+        <div class="nav-item" data-page="chat"><span class="ico">✉</span>聊天</div>
+        <div class="nav-item" data-page="persona"><span class="ico">◈</span>人格</div>
+        <div class="nav-item" data-page="memory"><span class="ico">❖</span>记忆</div>
+        <div class="nav-item" data-page="assets"><span class="ico">▣</span>素材</div>
+        <div class="nav-item" data-page="zone"><span class="ico">❐</span>空间</div>
+        <div class="nav-item" data-page="access"><span class="ico">⚿</span>权限</div>
+        <div class="nav-item" data-page="slang"><span class="ico">文</span>词库</div>
+        <div class="nav-item" data-page="tune"><span class="ico">✦</span>调参</div>
+        <div class="nav-item" data-page="settings"><span class="ico">⚙</span>设置</div>
+      </nav>
+      <div class="sidebar-foot">
+        <div>人格：<b id="foot-persona">无</b></div>
+        <div>QQ：<b id="foot-qq">未连接</b></div>
+        <div>模型：<b id="foot-model">-</b></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <h1 id="page-title">总览</h1>
+        <div class="spacer"></div>
+        <span class="pill"><span class="led" id="led-gw"></span>QQ 网关 <b id="pill-gw">-</b></span>
+        <span class="pill"><span class="led" id="led-llm"></span>模型 <b id="pill-llm">-</b></span>
+        <span class="pill">运行 <b id="pill-up">-</b></span>
+      </div>
+      <div class="content" id="content"></div>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

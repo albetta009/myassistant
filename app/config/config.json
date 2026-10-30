@@ -1,0 +1,149 @@
+{
+  "app": {
+    "name": "MY Assistant",
+    "version": "0.1.0"
+  },
+  "server": {
+    "host": "127.0.0.1",
+    "port": 3110
+  },
+  "onebot": {
+    "kind": "snowluma",
+    "wsUrl": "ws://127.0.0.1:3001",
+    "httpUrl": "http://127.0.0.1:3000",
+    "accessToken": "aiwo-2026-local",
+    "reconnectMinMs": 1000,
+    "reconnectMaxMs": 30000
+  },
+  "llm": {
+    "defaultProvider": "deepseek",
+    "historyTurns": 24,
+    "maxTokens": 2400,
+    "temperature": 1.1,
+    "providers": {
+      "deepseek": {
+        "label": "DeepSeek",
+        "baseUrl": "https://api.deepseek.com/v1",
+        "models": [
+          "deepseek-flash",
+          "deepseek-chat",
+          "deepseek-reasoner"
+        ],
+        "defaultModel": "deepseek-flash",
+        "apiKeyRef": "deepseek",
+        "contextWindow": 128000,
+        "noAuth": false
+      }
+    },
+    "visionModel": "deepseek-flash",
+    "heavyModel": "deepseek-v4-pro",
+    "visionMaxImages": 2,
+    "visionMaxBytes": 3145728,
+    "proEnabled": false
+  },
+  "persona": {
+    "active": "喜多温柔",
+    "maxInjectChars": 6000
+  },
+  "access": {
+    "ownerQQ": 0,
+    "mode": "owner",
+    "allow": {
+      "private": [],
+      "groups": []
+    },
+    "deny": {
+      "private": [],
+      "groups": []
+    },
+    "allowAllWhenEmpty": false
+  },
+  "behavior": {
+    "readDelayMs": [
+      600,
+      2200
+    ],
+    "typingMsPerChar": 55,
+    "typingMaxMs": 6000,
+    "sendGapMs": [
+      800,
+      2600
+    ],
+    "maxSendPerMinute": 8,
+    "maxSendPerHour": 60,
+    "quietHours": {
+      "enabled": true,
+      "start": "01:30",
+      "end": "09:00"
+    },
+    "splitMaxChars": 32,
+    "replyProbability": 0.85
+  },
+  "memory": {
+    "enabled": true,
+    "fts": true,
+    "diaryHour": 4,
+    "rollAfter": 40,
+    "rollKeep": 20
+  },
+  "theme": {
+    "accent": "#bb7c7c",
+    "accent2": "#ff0000",
+    "bg": "",
+    "bgOpacity": 0.18
+  },
+  "prompt": {
+    "rules": "- 你是在 QQ 上打字。一条只发一小句，平均不超过 25 字。\n- 想发几条就换行分开（每行一条），我会隔一两秒逐条发出去，像真的在一句句打。\n- 一次回复 1~3 条都正常。如果一句话里有两层意思（先应一声，再说内容），就拆成两条发，别压成一条。\n- 例：问「你知道你叫什么吗」→ 第一条「知道呀」，第二条「我叫喜多」。不要只回「我叫喜多呀」。\n- 回复的消息结尾很少很少会加上句号。\n- 不要 Markdown、不要列表、不要加粗、不要小标题。\n- 不要总结、不要升华、不要说\"作为AI\"、不要客服腔、不要每次都反问。\n- 允许只回一个字、一个\"嗯\"、一句\"啊？\"。允许敷衍、允许冷淡、允许不接话。\n- 不是每条都必须回。跟你无关、或者接不上话，就只输出 [SILENT]，我会保持沉默。\n- 不确定的事就说不记得，不要编造记忆。\n- 对方隔了很久才回你，可以像真人一样先反应一下（\"诶 你终于出现了\"）。"
+  },
+  "media": {
+    "autoStickerProbability": 0.05,
+    "maxStickers": 500,
+    "collectIncoming": true,
+    "maxPerEmotion": 3,
+    "reviewIncoming": true
+  },
+  "tts": {
+    "enabled": true,
+    "voice": "Microsoft Huihui Desktop",
+    "rate": 0,
+    "maxChars": 200,
+    "provider": "sapi",
+    "breeze": {
+      "baseUrl": "https://api.breezeblue.ai",
+      "voiceId": "",
+      "modelId": "breeze-tts-2",
+      "language": "zh",
+      "instructions": "",
+      "speed": 1,
+      "guidance": 0,
+      "outputFormat": "wav_24000",
+      "padMs": 300
+    }
+  },
+  "wake": {
+    "enabled": false,
+    "dryRun": true,
+    "tickSec": 60,
+    "baseHit": 18,
+    "minGapMin": 20,
+    "cooldownMin": 30,
+    "dailyCap": 3,
+    "allowGroups": false,
+    "targets": [],
+    "maxGapMin": 90,
+    "missBonus": 8,
+    "missCap": 30,
+    "motive": "好久没人跟我说话了，我该主动去打个招呼"
+  },
+  "mood": {
+    "enabled": true,
+    "influenceWake": true,
+    "baseline": 68,
+    "floor": 15,
+    "halfLifeMin": 180,
+    "emotionHalfLifeMin": 90,
+    "judgeEvery": 5,
+    "confidenceGate": 55,
+    "inject": "event"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "CoreExe": "runtime\\node\\node.exe",
+  "CoreScript": "app\\core\\main.js",
+  "CorePort": 3110,
+  "ProtoKind": "snowluma",
+  "ProtoDir": "runtime\\snowluma",
+  "ProtoExe": "",
+  "ProtoArgs": "",
+  "ProtoPort": 3001,
+  "ProtoWebUi": "http://127.0.0.1:5099",
+  "QqExe": "",
+  "QqAutoStart": true,
+  "AutoStart": false,
+  "CloseToTray": true
+}
