@@ -988,7 +988,7 @@ export function createServer({ agent, onebot, bus, startedAt }) {
       if (p === '/api/tts/test' && req.method === 'POST') {
         const body = await readBody(req);
         const tts = await import('./tts.js');
-        const r = await tts.synthesize(body.text || '你好呀，我是喜多，听得到吗？', {
+        const r = await tts.synthesize(body.text || '你好呀，听得到吗？', {
           provider: body.provider,
           apiKey: body.apiKey ? String(body.apiKey).trim() : undefined,
           ...(body.breeze || {}),

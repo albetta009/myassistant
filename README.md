@@ -1,6 +1,6 @@
-# MY Assistant
+﻿# MY Assistant
 
-一个本地跑的 QQ 聊天机器人程序：有人格卡、长期记忆、情绪、表情库和语音（本机 SAPI / Breeze Blue）。
+一个本地跑的 QQ 聊天机器人：有人格卡、长期记忆、情绪、表情库和语音（本机 SAPI / Breeze Blue）。
 
 > **想直接运行？** 去 [Releases](../../releases) 下载 `MYAssistant-clean-*.zip`（解压即用，约 140 MB，含 Node 和协议端）。
 > 下面是从源码/首次配置开始的说明。
@@ -71,7 +71,7 @@ MYAssistant.exe        启动器
 launcher.json          启动器配置（端口、协议端类型）
 app/core/              核心：聊天、记忆、情绪、表情、语音
 app/ui/                控制台前端
-app/config/personas/   人格卡（自带的几张示例，可自己写）
+app/config/personas/   人格卡（默认.md；_模板.md 复制一份改就行）
 app/config/config.json 主配置
 app/config/secrets.json  密钥（首次保存后才会有）
 app/data/              记忆数据库、表情、图片、语音缓存（首次启动自动创建）
@@ -88,6 +88,7 @@ logs/                  运行日志
 - **核心在线但没人回**：`权限` 页没填 ownerQQ，或 QQ 没登录 / OneBot 没配对（端口 3001、token 要对上）。
 - **端口被占**：改 `launcher.json` 的 `CorePort` / `ProtoPort`，同步改 `app/config/config.json` 里的 `onebot.wsUrl`。
 - **想换人格**：控制台「人格」页选卡 → 设为当前人格，下一条消息生效。
+- **想让她认某个名字**：在 `app/config/config.json` 的 `persona.callNames` 里加，比如 `["小明","明明"]`；群聊里出现这些词就算在叫她（`_模板.md` 可以复制来写新卡）。
 - **数据在哪**：`app/data/memory.db`（SQLite）。想清空记忆就停核心后删掉它。
 - **备份**：直接复制整个目录即可；`app/data` 是全部记忆。
 

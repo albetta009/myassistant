@@ -1894,7 +1894,7 @@ async function pageSettings(root) {
       : picked;
     try {
       const out = await api.post('/api/tts/test', {
-        text: '你好呀，我是喜多，能听出这是我的声音吗？',
+        text: '你好呀，能听出这是我的声音吗？',
         provider,
         apiKey: elBreezeKey.value.trim() || undefined,
         voice: document.getElementById('s-tts-voice').value.trim(),

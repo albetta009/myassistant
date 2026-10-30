@@ -409,14 +409,14 @@ export class Agent {
     return store.setConvState(convId, { ...patch });
   }
 
-  /** 文字里有没有叫我（群名片/昵称改了也能认出来） */
+  /** 文字里有没有叫我：QQ 昵称 + 配置里的 callNames（人格卡名字不写死，避免误伤普通词） */
   calledByName(text) {
     const s = String(text || '');
     if (!s) return false;
-    const names = ['喜多', '小喜多'];
+    const names = [];
     if (this.onebot?.selfName) names.push(String(this.onebot.selfName));
-    const pn = activePersonaText().name;
-    if (pn) names.push(pn);
+    const extra = loadConfig().persona?.callNames;
+    if (Array.isArray(extra)) for (const n of extra) names.push(String(n));
     return names.some((n) => n && n.length >= 2 && s.includes(n));
   }
 
