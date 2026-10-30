@@ -1,6 +1,6 @@
 # MY Assistant
 
-一个本地跑的 QQ 聊天机器人：有人格卡、长期记忆、情绪、表情库和语音（本机 SAPI / Breeze Blue）。
+一个本地跑的 QQ 聊天机器人程序：有人格卡、长期记忆、情绪、表情库和语音（本机 SAPI / Breeze Blue）。
 
 > **想直接运行？** 去 [Releases](../../releases) 下载 `MYAssistant-clean-*.zip`（解压即用，约 140 MB，含 Node 和协议端）。
 > 下面是从源码/首次配置开始的说明。
