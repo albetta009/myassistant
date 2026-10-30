@@ -105,3 +105,7 @@ logs/                  运行日志
 ## License
 
 [MIT](LICENSE) © 2026 albetta009
+
+## 第三方组件
+
+便携包内含 SnowLuma 等第三方组件，各自遵循其许可；详见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
